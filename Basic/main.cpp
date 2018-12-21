@@ -3,7 +3,10 @@
 Timer timerHello;
 
 static void taskHello(void *) {
-  printf("Hello World!\n");
+  struct timeval t;
+  gettimeofday(&t, nullptr);
+  printf("[%lu.%06lu] Hello World!\n", (uint32_t) t.tv_sec, t.tv_usec);
+  digitalToggle(PA0);
 }
 
 void setup() {
@@ -12,4 +15,7 @@ void setup() {
 
   timerHello.onFired(taskHello, NULL);
   timerHello.startPeriodic(1000);
+
+  pinMode(PA0, OUTPUT);
+  digitalWrite(PA0, HIGH);
 }
