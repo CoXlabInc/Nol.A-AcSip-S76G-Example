@@ -1,0 +1,4 @@
+{
+ "board": "acsip-s76g",
+ "options": "NOLA_DEBUG_LORAWAN=1"
+}
