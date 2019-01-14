@@ -2,10 +2,12 @@
 
 Timer timerHello;
 
+uint8_t x __attribute__ ((section(".noinit"))) = 0;
+
 static void taskHello(void *) {
   struct timeval t;
   gettimeofday(&t, nullptr);
-  printf("[%lu.%06lu] Hello World!\n", (uint32_t) t.tv_sec, t.tv_usec);
+  printf("[%lu.%06lu] Hello World! (%u)\n", (uint32_t) t.tv_sec, t.tv_usec, x++);
   digitalToggle(PA0);
 }
 
