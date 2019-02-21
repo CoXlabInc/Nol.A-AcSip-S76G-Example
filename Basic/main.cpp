@@ -20,4 +20,6 @@ void setup() {
 
   pinMode(PA0, OUTPUT);
   digitalWrite(PA0, HIGH);
+
+  gps.begin();
 }
