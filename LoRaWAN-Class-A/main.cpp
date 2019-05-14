@@ -1,7 +1,7 @@
 #include <cox.h>
 #include <LoRaMacKR920SKT.hpp>
 
-LoRaMacKR920SKT LoRaWAN = LoRaMacKR920SKT(SX1276, nullptr, 17);
+LoRaMacKR920SKT LoRaWAN = LoRaMacKR920SKT(SX1276, 17);
 Timer timerSend;
 
 #define OVER_THE_AIR_ACTIVATION 1
